@@ -73,7 +73,7 @@ int main() {
 	//課題
 	int Number = 0;
 	int dice = 0;
-	printf("半なら0,丁なら1と入力する\n");
+	printf("半なら0,丁なら1で入力する\n");
 	printf("半か丁か : ");
 	scanf_s("%d", &Number);
 	printf("\n");
