@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
-
 typedef void (*PFunc)(int*);
 
 void SetTimeOut(PFunc P, int second) {
@@ -16,7 +15,6 @@ void DispResult(int* s) {}
 int main() {
 	int playerNumber = 0;
 	std::function<void(void)> hantyo = [=]() {
-
 		int dice = rand() % 6 + 1;
 		int answer;
 		answer = dice % 2;
@@ -30,8 +28,8 @@ int main() {
 		}
 	};
 
-	printf("半なら0,丁なら1と入力する\n");
-	printf("半か丁か : ");
+	printf("半なら0,丁なら1で入力する\n");
+	printf("半か？丁か？ : ");
 	scanf_s("%d", &playerNumber);
 	printf("\n");
 
