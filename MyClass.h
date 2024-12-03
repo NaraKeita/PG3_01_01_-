@@ -6,8 +6,8 @@ public:
 	void Func2();
 
 private:
-	//メンバ関数ポインタのテーブル
-	void (MyClass::*spFuncTable[])() = {
-	
-	}
+	////メンバ関数ポインタのテーブル
+	//void (MyClass::*spFuncTable[])() = {
+	//
+	//}
 };
