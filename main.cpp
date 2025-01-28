@@ -9,6 +9,7 @@ void SetTimeOut(PFunc P, int second) {
 	P(&second);
 }
 
+
 //コールバック関数
 void DispResult(int* s) {}
 
