@@ -1,42 +1,51 @@
 #include <stdio.h>
-#include <iostream>
 
-/*クラス名「TemplateClass」で複数クラステンプレートを定義*/
-template<typename Type, typename Type2>
-class TemplateClass {
+// 親クラス「色」
+class Colors {
 public:
-	// コンストラクタ（メンバ変数Number1,Number2を引数number1,number2で初期化）
-	TemplateClass(Type number1, Type2 number2) : Number1(number1), Number2(number2) {}
+	Colors(const char* a, const char* b) : name(a), mood(b) {}
+	virtual void Mood() {}
+	/*仮想デストラクタ*/
+protected:
+	const char* name;
+	const char* mood;
+};
 
-	Type Min() {
-		if (Number1>Number2) {
-			return static_cast<Type>(Number1);
-		} else {
-			return static_cast<Type2>(Number2);
-		}
-	};
+// 親の色クラスを継承した「青」クラス
+class Blue : public /*親クラス*/
+{
+public:
+	Blue() : Colors("Blue", "蒼き深淵の瞳") { printf("This color is %s\n", name); }
+	void Mood() { printf("%s is %s\n", name, mood); }
+};
 
-private:
-	/*Type,Type2を使ってNumber1と2を定義*/
-	Type Number1;
-	Type Number2;
+// 親の色クラスを継承した「赤」クラス
+class Red : public /*親クラス*/
+{
+public:
+	Red() : Colors("Red", "灼眼のまなざし") { printf("This color is %s\n", name); }
+	void Mood() { printf("%s is %s\n", name, mood); }
+};
+
+// 親の色クラスを継承した「白」クラス
+class White : public /*親クラス*/
+{
+public:
+	White() : Colors("White", "聖なる白銀") { printf("This color is %s\n", name); }
+	void Mood() { printf("%s is %s\n", name, mood); }
 };
 
 int main() {
-	/*クラス名から型を考えて<>の中を定義*/
-	TemplateClass<int, int> intFloatTemplate(10, 50.0f);
-	TemplateClass<int, int> intDoubleTemplate(80, 13.0);
-	TemplateClass<float, float> floatIntTemplate(2.0f, 9);
-	TemplateClass<float, float> floatDoubleTemplate(11.0f, 3.5);
-	TemplateClass<double, double> doubleIntTemplate(666.0, 333);
-	TemplateClass<double, double> doubleFloatTemplate(435.8, 563.5f);
 
-	std::cout << "int(10)　と float(50.0f) を比べて小さい数字を表す：" << intFloatTemplate.Min() << std::endl;
-	std::cout << "int(80)　と double(13.0) を比べて小さい数字を表す：" << intDoubleTemplate.Min() << std::endl;
-	std::cout << "float(2.0f)　と int(9) を比べて小さい数字を表す：" << floatIntTemplate.Min() << std::endl;
-	std::cout << "float(11.0f)　と double(3.5) を比べて小さい数字を表す：" << floatDoubleTemplate.Min() << std::endl;
-	std::cout << "double(666.0)　と int(333) を比べて小さい数字を表す：" << doubleIntTemplate.Min() << std::endl;
-	std::cout << "double(435.8)　と float(563.5) を比べて小さい数字を表す：" << doubleFloatTemplate.Min() << std::endl;
+	Colors* colors[3] = {/*赤クラス*/, /*青クラス*/, /*白クラス*/};
 
-	return 0;
+	puts("");
+
+	for (int i = 0; i < 3; i++)
+		/*3つの子供クラスのMood関数実行*/
+
+		for (int i = 0; i < 3; i++)
+			/*3つの子供クラスを解放*/
+
+			return 0;
 }
