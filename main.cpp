@@ -2,6 +2,7 @@
 #include<Windows.h>//16ページ
 #include<stdlib.h>//追加
 
+
 //#include<Windows.h>//追加
 
 //-----------6ページまで----------------//
